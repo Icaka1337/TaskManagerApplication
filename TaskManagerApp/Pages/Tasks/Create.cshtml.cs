@@ -21,19 +21,20 @@ namespace TaskManagerApp.Pages.Tasks
 
         public IActionResult OnGet()
         {
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "FirstName");
             return Page();
         }
 
         [BindProperty]
-        public Models.Task Task { get; set; } = default!;
+        public Models.Task Task { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+           /* if (!ModelState.IsValid)
             {
                 return Page();
-            }
+            }*/
 
             _context.Tasks.Add(Task);
             await _context.SaveChangesAsync();

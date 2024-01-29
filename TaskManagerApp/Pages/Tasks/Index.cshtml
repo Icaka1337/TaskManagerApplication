@@ -13,42 +13,43 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Task[0].Title)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Task[0].Description)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Task[0].Status)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Task[0].UserId)
+            <th class="text-center">
+                Assigned to UserId
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Task) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
+        @foreach (var item in Model.Task)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td class="text-center">
                     <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">Edit</a> |
                     <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-secondary">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

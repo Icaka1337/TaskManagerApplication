@@ -25,6 +25,7 @@ namespace TaskManagerApp.Pages.Tasks
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "FirstName");
             if (id == null)
             {
                 return NotFound();
@@ -43,10 +44,10 @@ namespace TaskManagerApp.Pages.Tasks
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 return Page();
-            }
+            }*/
 
             _context.Attach(Task).State = EntityState.Modified;
 

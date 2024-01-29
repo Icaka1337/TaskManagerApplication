@@ -28,10 +28,14 @@
                 <input asp-for="Task.Status" class="form-control" />
                 <span asp-validation-for="Task.Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Task.UserId" class="control-label"></label>
                 <input asp-for="Task.UserId" class="form-control" />
                 <span asp-validation-for="Task.UserId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Task.UserId" class="control-label"></label>
+                <select asp-for="Task.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-outline-primary mt-2" />

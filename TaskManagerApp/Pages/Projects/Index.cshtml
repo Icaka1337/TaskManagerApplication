@@ -13,30 +13,31 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Project[0].ProjectName)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Project[0].DateTime)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Project) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateTime)
-            </td>
-            <td>
+        @foreach (var item in Model.Project)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td class="text-center">
                     <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">Edit</a> |
                     <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-secondary">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

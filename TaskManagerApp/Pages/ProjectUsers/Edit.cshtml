@@ -16,14 +16,22 @@
             <input type="hidden" asp-for="ProjectUser.UserId" />
             <input type="hidden" asp-for="ProjectUser.ProjectId" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="ProjectUser.UserId" class="control-label"></label>
+                <select asp-for="ProjectUser.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectUser.ProjectId" class="control-label"></label>
+                <select asp-for="ProjectUser.ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-primary mt-2" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index" class="btn btn-warning mt-2">Back to List</a>
 </div>
 
 @section Scripts {

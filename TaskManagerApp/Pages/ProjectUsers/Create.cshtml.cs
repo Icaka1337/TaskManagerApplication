@@ -29,14 +29,8 @@ namespace TaskManagerApp.Pages.ProjectUsers
         [BindProperty]
         public ProjectUser ProjectUser { get; set; } = default!;
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.ProjectUser.Add(ProjectUser);
             await _context.SaveChangesAsync();
 

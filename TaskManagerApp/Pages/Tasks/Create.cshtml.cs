@@ -28,13 +28,8 @@ namespace TaskManagerApp.Pages.Tasks
         [BindProperty]
         public Models.Task Task { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-           /* if (!ModelState.IsValid)
-            {
-                return Page();
-            }*/
 
             _context.Tasks.Add(Task);
             await _context.SaveChangesAsync();

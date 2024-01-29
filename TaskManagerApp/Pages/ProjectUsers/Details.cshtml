@@ -5,27 +5,26 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Assigned Projects Details</h1>
 
 <div>
-    <h4>ProjectUser</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProjectUser.User)
+            @Html.DisplayNameFor(model => model.ProjectUser.UserId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProjectUser.User.FirstName)
+            @Html.DisplayFor(model => model.ProjectUser.UserId)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProjectUser.Project)
+            @Html.DisplayNameFor(model => model.ProjectUser.ProjectId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProjectUser.Project.ProjectName)
+            @Html.DisplayFor(model => model.ProjectUser.ProjectId)
         </dd>
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.ProjectUser.UserId" class="btn btn-outline-primary">Edit</a> |
+    <a asp-page="./Index" class="btn btn-warning">Back to List</a>
 </div>

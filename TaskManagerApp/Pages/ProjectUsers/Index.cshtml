@@ -5,18 +5,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">Assign Projects to Users</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
+<p class="text-center">
+    <a asp-page="Create" class="btn btn-outline-primary mt-2">Assign Project</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.ProjectUser[0].User)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.ProjectUser[0].Project)
             </th>
             <th></th>
@@ -25,17 +25,17 @@
     <tbody>
 @foreach (var item in Model.ProjectUser) {
         <tr>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.User.FirstName)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Project.ProjectName)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+                <td class="text-center">
+                    <a asp-page="./Edit" asp-route-id="@item.ProjectId" class="btn btn-outline-primary">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ProjectId" class="btn btn-outline-secondary">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ProjectId" class="btn btn-outline-danger">Delete</a>
+                </td>
         </tr>
 }
     </tbody>

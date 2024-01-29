@@ -48,8 +48,9 @@ namespace TaskManagerApp.Pages.ProjectUsers
             {
                 return NotFound();
             }
+            //make projectUser = to the projectUser that has the UserId that was passed in and the ProjectId that was passed in
+            var projectuser = await _context.ProjectUser.Where(m => m.UserId == id).FirstOrDefaultAsync(m => m.ProjectId == id);
 
-            var projectuser = await _context.ProjectUser.FindAsync(id);
             if (projectuser != null)
             {
                 ProjectUser = projectuser;
